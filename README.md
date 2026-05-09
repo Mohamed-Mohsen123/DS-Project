@@ -348,3 +348,12 @@ This cleanly ends the file-receiving loop and closes the connection.
 ### ⑦ Server Loops for Next Client
 
 After a client disconnects, the server's outer `while(true)` loop calls `serverSocket.accept()` again and waits for the next client. The server never shuts down on its own — it must be stopped manually (e.g. `Ctrl+C`).
+
+## Snapshots of Results
+
+Below are snapshots of the results:
+
+![Snapshot 1](./1.jpeg)
+
+![Snapshot 2](./2.jpeg)
+
