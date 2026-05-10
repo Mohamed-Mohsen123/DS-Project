@@ -6,83 +6,9 @@
 
 Before diving into the source files, make sure you are comfortable with the following topics. Each one maps directly to something used in this project. Links point to free, beginner-friendly resources.
 
----
+### ⚠️Read at least chapter 5,6 really important
 
-### 1. 🌐 How TCP/IP Networking Works
-The entire project is built on a TCP connection between two machines. You should understand what TCP is, what a "connection" means, and why it is reliable.
-
-- **What to know:** client/server model, IP addresses, ports, what "establishing a connection" means, difference between TCP and UDP.
-- 📖 [Computer Networking — Khan Academy](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet)
-- 📖 [TCP/IP Explained Simply — Cloudflare](https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/)
-
----
-
-### 2. 🔌 Java Sockets (`Socket` & `ServerSocket`)
-This project uses Java's built-in socket classes to open and manage the TCP connection.
-
-- **What to know:** what a `Socket` is, how `ServerSocket.accept()` blocks waiting for a client, how both sides communicate through streams.
-- 📖 [Java Socket Programming — Oracle Docs](https://docs.oracle.com/javase/tutorial/networking/sockets/index.html)
-- 📖 [Java Sockets Beginner Guide — Baeldung](https://www.baeldung.com/a-guide-to-java-sockets)
-
----
-
-### 3. 📦 Java I/O Streams (`InputStream`, `OutputStream`, `DataInputStream`, `DataOutputStream`)
-All data in this project — filenames, file sizes, and raw bytes — travels through streams. Understanding how streams are layered is essential.
-
-- **What to know:** what a stream is, the difference between byte streams and typed streams, why we wrap streams in `Buffered*` and `Data*` classes, what `flush()` does.
-- 📖 [Java I/O Streams — Oracle Tutorial](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
-- 📖 [DataInputStream & DataOutputStream — Baeldung](https://www.baeldung.com/java-dataoutputstream)
-
----
-
-### 4. 🗂️ Java NIO File API (`Files`, `Paths`, `Path`)
-The project uses the modern `java.nio.file` package for all disk operations — checking if files exist, reading them, and writing them.
-
-- **What to know:** what `Path` represents, how `Files.exists()`, `Files.size()`, `Files.newInputStream()`, and `Files.newOutputStream()` work, what `StandardOpenOption.CREATE_NEW` does.
-- 📖 [Java NIO File I/O — Oracle Tutorial](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
-- 📖 [Guide to Java NIO2 — Baeldung](https://www.baeldung.com/java-nio-2-file-api)
-
----
-
-### 5. 🛡️ Try-With-Resources (`try (...)`)
-Every socket, stream, and file in this project is opened inside a `try-with-resources` block. This is Java's way of guaranteeing that resources are closed even when errors occur.
-
-- **What to know:** what `AutoCloseable` is, why resources must be closed, how `try-with-resources` replaces manual `finally` blocks.
-- 📖 [Try-With-Resources — Oracle Docs](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
-- 📖 [Try-With-Resources — Baeldung](https://www.baeldung.com/java-try-with-resources)
-
----
-
-### 6. ⚠️ Java Exception Handling (`IOException`, `EOFException`, `ConnectException`)
-The project handles several specific exceptions to give useful error messages. Understanding the exception hierarchy helps you follow the error paths in the code.
-
-- **What to know:** checked vs unchecked exceptions, what `IOException` covers, what `EOFException` means (stream ended unexpectedly), what `ConnectException` means (server not reachable).
-- 📖 [Java Exceptions — Oracle Tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
-
----
-
-### 7. 🔒 Path Traversal Attacks (Security Concept)
-The server includes a deliberate security check to prevent a well-known attack. Knowing what path traversal is will help you understand *why* that one line of code exists.
-
-- **What to know:** what `../../` means in a file path, how an attacker could use filenames to escape the intended directory, how stripping directory components defends against it.
-- 📖 [Path Traversal Attack — OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
-
----
-
-### 8. 💡 Binary Protocols (Custom Wire Format)
-The client and server don't just send text — they follow a strict binary protocol (filename → size → bytes). Understanding why a protocol needs to be strict helps the whole design make sense.
-
-- **What to know:** what a "protocol" is in networking, why both sides must agree on data order and format, what "framing" means (knowing where one message ends and another begins).
-- 📖 [Network Protocols Explained — MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#http_is_simple)
-
----
-
-> 💡 **You don't need to master all of these first.** Read through the code once, note what confuses you, then look up just those topics. Coming back to the code after reading one concept at a time is often the fastest way to learn.
-
----
-
-A simple Java program that lets you **send files from one computer to another** over a network.  
-Think of it like a very basic version of file sharing — one machine acts as the **receiver (server)**, and the other acts as the **sender (client)**.
+https://hossammohsen.notion.site/CCSED-26-Distributed-Systems-3181c436c7f880f5b233fba470c6c55b
 
 ---
 
